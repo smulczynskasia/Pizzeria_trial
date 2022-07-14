@@ -57,7 +57,7 @@
       const thisProduct = this;
       
       console.log('new Product:', thisProduct);
-                 },
+                 }
     }
     
 
