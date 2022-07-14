@@ -57,7 +57,7 @@
       const thisProduct = this;
       
       console.log('new Product:', thisProduct);
-                 }
+                 },
     }
     
 
@@ -67,7 +67,7 @@
     const testProduct = new Product();
     
     console.log('testProduct:', testProduct);
-  }
+  },
     
     init: function(){
       const thisApp = this;
