@@ -56,7 +56,7 @@
     constructor(){
       const thisProduct = this;
       
-      console.log{'new Product:', thisProduct);
+      console.log('new Product:', thisProduct);
                  }
     }
     
