@@ -57,30 +57,17 @@
       const thisProduct = this;
       
       console.log('new Product:', thisProduct);
+                 }
     }
-  }
     
 
   const app = {
     
-    
     initMenu: function(){
-<<<<<<< HEAD
-      const testProduct = new Product();
-=======
-    const thisApp = this;
-      
-    console.log('thisApp.data:', thisApp.data);
->>>>>>> a6aa718738ccdbc2b2454671ee5a78ef60eace70
+    const testProduct = new Product();
     
-      console.log('testProduct:', testProduct);
-    },
-    
-    initData: function(){
-      const thisApp = this;
-      
-      thisApp.data = dataSource;
-    },
+    console.log('testProduct:', testProduct);
+  },
     
     init: function(){
       const thisApp = this;
@@ -90,12 +77,7 @@
       console.log('settings:', settings);
       console.log('templates:', templates);
        
-<<<<<<< HEAD
-      thisApp.initMenu();
-=======
-  thisApp.initData();
   thisApp.initMenu();
->>>>>>> a6aa718738ccdbc2b2454671ee5a78ef60eace70
       
     },
   };
