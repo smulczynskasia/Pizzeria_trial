@@ -67,6 +67,7 @@
     initMenu: function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       const testProduct = new Product();
 =======
 =======
@@ -79,6 +80,12 @@
     
       console.log('testProduct:', testProduct);
     },
+=======
+      const testProduct = new Product();
+      
+    console.log('testProduct:', testProduct);
+  },
+>>>>>>> d9c3702e1f8c94a8867d534d3590ef48873a6460
     
     initData: function(){
       const thisApp = this;
@@ -95,9 +102,12 @@
       console.log('templates:', templates);
        
 <<<<<<< HEAD
+<<<<<<< HEAD
       thisApp.initMenu();
 =======
   thisApp.initData();
+=======
+>>>>>>> d9c3702e1f8c94a8867d534d3590ef48873a6460
   thisApp.initMenu();
 >>>>>>> a6aa718738ccdbc2b2454671ee5a78ef60eace70
       
