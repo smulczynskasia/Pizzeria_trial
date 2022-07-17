@@ -66,13 +66,12 @@
     
     initMenu: function(){
 
-      const testProduct = new Product();
-
     const thisApp = this;
       
     console.log('thisApp.data:', thisApp.data);
     
-      console.log('testProduct:', testProduct);
+    for(let productData in thisApp.data.products){
+      new Product(productData, thisApp.data.products[productData]);
     },
     
     initData: function(){
