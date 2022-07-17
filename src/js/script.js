@@ -66,8 +66,12 @@
     
     initMenu: function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
       const testProduct = new Product();
 =======
+=======
+    const testProduct = new Product();
+>>>>>>> 55d794308c7f6ae8d628e6d0e7b5ff9b6c8e2e93
     const thisApp = this;
       
     console.log('thisApp.data:', thisApp.data);
