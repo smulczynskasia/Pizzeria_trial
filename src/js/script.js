@@ -57,17 +57,17 @@
       const thisProduct = this;
       
       console.log('new Product:', thisProduct);
-                 }
     }
+  }
     
 
   const app = {
     
     initMenu: function(){
-    const testProduct = new Product();
+      const testProduct = new Product();
     
-    console.log('testProduct:', testProduct);
-  },
+      console.log('testProduct:', testProduct);
+    },
     
     init: function(){
       const thisApp = this;
@@ -77,7 +77,7 @@
       console.log('settings:', settings);
       console.log('templates:', templates);
        
-  thisApp.initMenu();
+      thisApp.initMenu();
       
     },
   };
