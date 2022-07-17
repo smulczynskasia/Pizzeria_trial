@@ -75,7 +75,7 @@
       
       /* find menu container */
       
-      const menuContainer = document.querySelector(select.container0f.menu);
+      const menuContainer = document.querySelector(select.containerOf.menu);
       
       /* add element to menu */
       
