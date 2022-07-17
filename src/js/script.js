@@ -90,8 +90,9 @@
       console.log('templates:', templates);
        
 
-      thisApp.initMenu();
       thisApp.initData();
+      thisApp.initMenu();
+     
       
     },
   };
