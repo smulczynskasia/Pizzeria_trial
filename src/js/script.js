@@ -74,12 +74,6 @@
     
       console.log('testProduct:', testProduct);
     },
-
-      const testProduct = new Product();
-      
-    console.log('testProduct:', testProduct);
-  },
-
     
     initData: function(){
       const thisApp = this;
@@ -97,12 +91,7 @@
        
 
       thisApp.initMenu();
-=======
-  thisApp.initData();
-=======
->>>>>>> d9c3702e1f8c94a8867d534d3590ef48873a6460
-  thisApp.initMenu();
->>>>>>> a6aa718738ccdbc2b2454671ee5a78ef60eace70
+      thisApp.initData();
       
     },
   };
