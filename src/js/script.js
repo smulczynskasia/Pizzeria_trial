@@ -68,7 +68,6 @@
 
       const testProduct = new Product();
 
-    const testProduct = new Product();
     const thisApp = this;
       
     console.log('thisApp.data:', thisApp.data);
