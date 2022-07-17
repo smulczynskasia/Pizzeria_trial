@@ -65,11 +65,8 @@
     
     
     initMenu: function(){
-    const testProduct = new Product();
-    const thisApp = this;
+      const testProduct = new Product();
       
-    console.log('thisApp.data:', thisApp.data);
-    
     console.log('testProduct:', testProduct);
   },
     
@@ -87,7 +84,6 @@
       console.log('settings:', settings);
       console.log('templates:', templates);
        
-  thisApp.initData();
   thisApp.initMenu();
       
     },
