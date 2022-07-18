@@ -98,7 +98,7 @@
       
       /* find active product (product that has active class) */
 
-      const activeProduct = document.querySelectorAll(select.all.menuProductsActive);
+      const activeProduct = document.querySelectorAll(select.all.menuProductActive);
       
       /* if there is active product and it's not thisProduct.element, remove class active from it */
 
