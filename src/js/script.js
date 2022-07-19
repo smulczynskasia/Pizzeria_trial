@@ -105,7 +105,7 @@
 
     /* START: add event listener to clickable trigger on event click */
       
-    clickableTrigger.addEventListener('click', function(event) {
+    thisProduct.accordionTrigger.addEventListener('click', function(event) {
       
       /* prevent default action for event */
 
