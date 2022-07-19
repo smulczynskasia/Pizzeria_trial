@@ -102,7 +102,7 @@
       
       /* if there is active product and it's not thisProduct.element, remove class active from it */
 
-      if(activeProduct != null){
+      if(activeProduct !== null){
         activeProduct.classList.remove('active');
       }
       
