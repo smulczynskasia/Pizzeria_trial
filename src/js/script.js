@@ -186,11 +186,11 @@
             price = price - option.price;
           }
           
-          const optionImage = thisProduct.imageWrapper.querySelector(.paramId-optionId);
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
           
           if(optionImage){
             if(optionSelected){
-              console.log(optionImage, "Yes, we found it!");
+              console.log(optionSelected, "Yes, we found it!");
               optionImage.classList.add(classNames.menuProduct.imageVisible);
             }
               else {
