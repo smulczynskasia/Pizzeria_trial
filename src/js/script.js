@@ -96,6 +96,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion() {
@@ -172,8 +173,10 @@
           /* determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }*/
           const option = param.options[optionId];
           console.log(optionId, option, formData[paramId].includes(optionId), option);
+          
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
 
-          if(formData[paramId].includes(optionId) && !option.default) {
+          if(optionSelected && !option.default) {
             console.log(optionId, "Opcja jest wybrana, a nie byla domyslna")
             price = price + option.price;
           }
@@ -182,6 +185,19 @@
             console.log(optionId, "Opcja nie jest jest wybrana, a byla domyslna")
             price = price - option.price;
           }
+          
+          const optionImage = thisProduct.imageWrapper.querySelector(.paramId-optionId);
+          
+          if(optionImage){
+            if(optionSelected){
+              console.log(optionImage, "Yes, we found it!");
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+              else {
+                optionImage.classList.remove(classNames.menuProduct.imageVisible);
+              }
+          }
+            
         }
       }
 
