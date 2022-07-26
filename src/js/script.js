@@ -174,12 +174,12 @@
           console.log(optionId, option, formData[paramId].includes(optionId), option);
 
           if(formData[paramId].includes(optionId) && !option.default) {
-            console.log(optionId, "Opcja jest wybrana, a nie byla domyslna")
+            console.log(optionId, 'Opcja jest wybrana, a nie byla domyslna');
             price = price + option.price;
           }
 
           if(!formData[paramId].includes(optionId) && option.default) {
-            console.log(optionId, "Opcja nie jest jest wybrana, a byla domyslna")
+            console.log(optionId, 'Opcja nie jest jest wybrana, a byla domyslna');
             price = price - option.price;
           }
         }
