@@ -181,12 +181,13 @@
             price = price + option.price;
           }
 
-          if(!formData[paramId].includes(optionId) && option.default) {
+          if(!optionSelected && option.default) {
             console.log(optionId, "Opcja nie jest jest wybrana, a byla domyslna")
             price = price - option.price;
           }
           
-          const optionImage = thisProduct.imageWrapper.querySelector('.'+paramId+'-'+optionId);
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          console.log(optionImage);
           
           if(optionImage){
             if(optionSelected){
