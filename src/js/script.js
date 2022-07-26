@@ -176,13 +176,6 @@
           
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
 
-          if(formData[paramId].includes(optionId) && !option.default) {
-            console.log(optionId, 'Opcja jest wybrana, a nie byla domyslna');
-            price = price + option.price;
-          }
-
-          if(!formData[paramId].includes(optionId) && option.default) {
-            console.log(optionId, 'Opcja nie jest jest wybrana, a byla domyslna');
 
           if(optionSelected && !option.default) {
             console.log(optionId, "Opcja jest wybrana, a nie byla domyslna")
