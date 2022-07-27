@@ -64,7 +64,7 @@
       thisProduct.initOrderForm();
       thisProduct.processOrder();
 
-      //console.log('new Product:', thisProduct);
+      console.log('new Product:', thisProduct);
     }
 
     renderInMenu() {
@@ -149,6 +149,7 @@
         thisProduct.processOrder();
       });
     }
+    
 
     processOrder() {
       const thisProduct = this;
@@ -204,7 +205,7 @@
       /* update calculated price in the HTML */
       thisProduct.priceElem.innerHTML = price;
     }
-    }
+  }
   }
   
        
