@@ -152,12 +152,12 @@
       });
     }
     
-     class AmountWidget{
-    construtor(element){
-      const thisWidget = this;
+    
+    initAmountWidget(){
+      const thisProduct = this;
       
-      console.log('AmountWidget:', thisWidget);
-      console.log('constructor arguments:', element);
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      
     }
 
     processOrder() {
@@ -214,17 +214,17 @@
       /* update calculated price in the HTML */
       thisProduct.priceElem.innerHTML = price;
     }
-
-    initAmountWidget(){
-      const thisProduct = this;
-      
-      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
-      
-    }
   }
-
   }
   
+     class AmountWidget{
+    construtor(element){
+      const thisWidget = this;
+      
+      console.log('AmountWidget:', thisWidget);
+      console.log('constructor arguments:', element);
+    }
+       
   const app = {
 
 
