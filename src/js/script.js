@@ -218,7 +218,7 @@
   }
   
      class AmountWidget{
-    construtor(element){
+    constructor(element){
       const thisWidget = this;
       
       console.log('AmountWidget:', thisWidget);
