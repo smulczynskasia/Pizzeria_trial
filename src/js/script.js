@@ -211,7 +211,7 @@
     initAmountWidget(){
       const thisProduct = this;
       
-      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElement);
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
     }
     
   }
