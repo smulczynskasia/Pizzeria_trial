@@ -206,7 +206,7 @@
       thisProduct.priceElem.innerHTML = price;
     }
   }
-  }
+  
   
        
   const app = {
