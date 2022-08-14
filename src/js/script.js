@@ -247,8 +247,8 @@
         new Product(productData, thisApp.data.products[productData]);
       }
     },
-    
-    initData: function () {
+
+    initData: function(){
       const thisApp = this;
 
       thisApp.data = dataSource;
