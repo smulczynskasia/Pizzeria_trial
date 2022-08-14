@@ -250,7 +250,7 @@
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
-    },
+    }
   
        
   const app = {
