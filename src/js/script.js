@@ -238,19 +238,18 @@
       thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
     }
     
-    setValue(value){
+      setValue(value){
       const thisWidget = this;
-
+        
       const newValue = parseInt(value);
 
-      /* TO DO: Add validation */
+        /* TODO: add validation */
       if(thisWidget.value !== newValue && !isNaN(newValue)){
         thisWidget.value = newValue;
       }
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
-
     }
   
        
