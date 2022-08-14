@@ -192,7 +192,7 @@
     initAmountWidget(){
       const thisProduct = this;
       
-      thisPrpduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
     }
     
     getElements(element){
