@@ -359,7 +359,7 @@ const templates = {
 
 
     }
-  }
+
        
   const app = {
 
