@@ -243,7 +243,7 @@
       const newValue = parseInt(value);
       
       /* TODO: add validation */
-      if(thisWidget.value !== newValue && !isNaN(newValue) && newValue>=0 && newValue<=10){
+      if(thisWidget.value !== newValue && !isNaN(newValue) && newValue >= 0 && newValue <= 10){
         thisWidget.value = newValue;
       }
       
