@@ -47,6 +47,7 @@
       defaultMin: 1,
       defaultMax: 9,
     }
+    console.log(settings);
   };
 
   const templates = {
