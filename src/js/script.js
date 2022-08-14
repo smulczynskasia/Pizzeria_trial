@@ -61,6 +61,7 @@
       thisProduct.data = data;
       thisProduct.renderInMenu();
       thisProduct.getElements();
+      thisWidget.setValue(thisWidget.input.value);
       thisProduct.initAccordion();
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
@@ -235,6 +236,20 @@
       thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
       thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
     }
+    
+    setValue(value){
+     const thisWidget = this;
+      
+      const newValue = parseInt(value);
+      
+      /* TODO: add validation */
+      if(thisWidget.value !== newValue && !isNaN(newValue)){
+        thisWidget.value = newValue;
+      }
+      
+      if(isNaN = newValue){
+        thissWidget.value = newValue;
+      }
   }
   
        
