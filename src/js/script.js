@@ -246,10 +246,7 @@
       if(thisWidget.value !== newValue && !isNaN(newValue)){
         thisWidget.value = newValue;
       }
-      
-      if(isNaN = newValue){
-        thissWidget.value = newValue;
-      }
+     
   }
   
        
