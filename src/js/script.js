@@ -356,7 +356,7 @@ const templates = {
 
       //console.log('thisApp.data:', thisApp.data);
 
-      for (let productData in thisApp.data.products) {
+      for(let productData in thisApp.data.products){
         new Product(productData, thisApp.data.products[productData]);
       }
     },
