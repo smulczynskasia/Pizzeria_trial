@@ -182,6 +182,7 @@ const templates = {
       thisProduct.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
     }
     
@@ -252,6 +253,11 @@ const templates = {
       });
     }
     
+    addToCart(){
+      const thisProduct = this;
+
+      app.cart.add(thisProduct);
+    }
   }
   
   class AmountWidget{
@@ -344,6 +350,14 @@ const templates = {
       });
     }
     
+    add(menuProduct){
+      // const thisCart = this;
+
+      console.log('adding product', menuProduct);
+    }
+    }
+
+
     }
   }
        
