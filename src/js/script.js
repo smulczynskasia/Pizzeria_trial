@@ -195,14 +195,7 @@
       thisPrpduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
     }
     
-    getElements(element){
-  const thisWidget = this;
-
-  thisWidget.element = element;
-  thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
-  thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
-  thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
-}
+ 
 
   }
   
