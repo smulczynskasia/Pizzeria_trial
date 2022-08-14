@@ -322,7 +322,6 @@ const templates = {
       thisCart.products = [];
       
       thisCart.getElements(element);
-      thisCart.initActions();
       console.log('new Cart', thisCart);
     }
     
