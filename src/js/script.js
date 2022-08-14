@@ -335,7 +335,7 @@ const templates = {
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
 
-    initActions: function(){
+    initActions(){
       thisCart = this;
 
       thisCart.dom.toggleTrigger.addEventListener('click', function(event){
