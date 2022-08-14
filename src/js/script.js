@@ -46,8 +46,8 @@
       defaultValue: 1,
       defaultMin: 1,
       defaultMax: 9,
+      console.log('settings', settings);
     }
-    console.log('settings', settings);
   };
 
   const templates = {
