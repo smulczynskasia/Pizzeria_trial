@@ -132,6 +132,7 @@ const templates = {
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
 
     initAccordion() {
@@ -322,7 +323,7 @@ const templates = {
       thisCart.products = [];
       
       thisCart.getElements(element);
-      
+      thisCart.initActions();
       console.log('new Cart', thisCart);
     }
     
@@ -332,6 +333,16 @@ const templates = {
       thisCart.dom = {};
       
       thisCart.dom.wrapper = element;
+    }
+
+    initActions(){
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
+        event.preventDefault();
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
+    }
     }
   }
        
