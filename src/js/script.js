@@ -391,5 +391,3 @@ const templates = {
   };
 
   app.init();
-
-}
