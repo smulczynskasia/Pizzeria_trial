@@ -61,7 +61,6 @@
       thisProduct.data = data;
       thisProduct.renderInMenu();
       thisProduct.getElements();
-      thisWidget.setValue(thisWidget.input.value);
       thisProduct.initAccordion();
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
@@ -226,6 +225,8 @@
       console.log('constructor arguments:', element);
       
       thisWidget.getElements(element);
+      thisWidget.setValue(thisWidget.input.value);
+
     }
     
     getElements(element){
