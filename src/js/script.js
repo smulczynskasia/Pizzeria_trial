@@ -225,6 +225,7 @@
       
       thisWidget.getElements(element);
       thisWidget.setValue(thisWidget.input.value);
+      thisWidget.initActions();
     }
     
     getElements(element){
