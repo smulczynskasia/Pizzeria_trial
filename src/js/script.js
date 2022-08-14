@@ -188,9 +188,35 @@
       /* update calculated price in the HTML */
       thisProduct.priceElem.innerHTML = price;
     }
+    
+    initAmountWidget(){
+      const thisProduct = this;
+      
+      thisPrpduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+    }
+    
+    getElements(element){
+  const thisWidget = this;
+
+  thisWidget.element = element;
+  thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
+  thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
+  thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+}
 
   }
-
+  
+  class AmountWidget{
+    constructor(element){
+      const thisWidget = this;
+      
+      thisWidget.getElements(element);
+      
+      console.log('AmountWidget:', thisWidget);
+      console.log('constructor arguments:', element);
+    }
+  }
+  
   const app = {
 
 
