@@ -354,3 +354,4 @@ const templates = {
 
   app.init();
 
+}
