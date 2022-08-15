@@ -322,6 +322,7 @@ const templates = {
       thisCart.products = [];
       
       thisCart.getElements(element);
+      
       console.log('new Cart', thisCart);
     }
     
@@ -332,15 +333,12 @@ const templates = {
       
       thisCart.dom.wrapper = element;
     }
-
-    
-    }
   }
        
   const app = {
 
 
-    initMenu: function(){
+    initMenu: function () {
 
       const thisApp = this;
 
