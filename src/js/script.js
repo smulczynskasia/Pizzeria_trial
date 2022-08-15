@@ -322,7 +322,7 @@ const templates = {
       const event = new Event('updated');
       thisWidget.element.dispatchEvent(event);
     }
-    
+  }
     class Cart{
     constructor(element){
       const thisCart = this;
