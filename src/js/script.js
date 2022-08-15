@@ -401,5 +401,3 @@ const templates = {
   };
 
   app.init();
-
-}
