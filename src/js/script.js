@@ -377,7 +377,13 @@ const templates = {
         new Product(productData, thisApp.data.products[productData]);
       }
     },
-
+    
+    initCart: function(){
+      const thisApp = this;
+      
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+    },
     initData: function () {
       const thisApp = this;
 
@@ -395,6 +401,7 @@ const templates = {
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
 
 
     },
