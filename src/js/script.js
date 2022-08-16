@@ -237,6 +237,7 @@ const templates = {
             
         }
       }
+      thisProduct.priceSingle = price;
       /* muliply price by amount */
       price *= thisProduct.amountWidget.value;
       
