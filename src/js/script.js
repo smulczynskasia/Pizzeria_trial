@@ -251,17 +251,7 @@ const templates = {
         thisProduct.processOrder();
       });
     }
-    prepareCartProduct(){
-      const thisProduct = this;
-
-      const productSummary = {
-        id: thisProduct.id,
-        name: thisProduct.data.name,
-        amount: thisProduct.amountWidget.value,
-        priceSingle: thisProduct.priceSingle,
-        price: thisProduct.price,
-      };
-    }
+   
   }
   
   class AmountWidget{
@@ -323,34 +313,11 @@ const templates = {
       thisWidget.element.dispatchEvent(event);
     }
   }
-    class Cart{
-    constructor(element){
-      const thisCart = this;
-      
-      thisCart.products = [];
-      
-      thisCart.getElements(element);
-      this.initActions();
-      console.log('new Cart', thisCart);
-    }
     
-    getElements(element){
-      const thisCart = this;
-      
-      thisCart.dom = {};
-      
-      thisCart.dom.wrapper = element;
-      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
-    }
+    
+    
 
-    initActions(){
-      thisCart = this;
-
-      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
-        event.preventDefault();
-        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
-      });
-    }
+    
     
     add(menuProduct){
       // const thisCart = this;
@@ -378,12 +345,7 @@ const templates = {
       }
     },
     
-    initCart: function(){
-      const thisApp = this;
-      
-      const cartElem = document.querySelector(select.containerOf.cart);
-      thisApp.cart = new Cart(cartElem);
-    },
+   
     initData: function () {
       const thisApp = this;
 
