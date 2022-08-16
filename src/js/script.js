@@ -132,7 +132,6 @@ const templates = {
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
-      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
 
     initAccordion() {
@@ -183,6 +182,7 @@ const templates = {
       thisProduct.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
     }
     
@@ -253,6 +253,23 @@ const templates = {
       });
     }
     
+    addToCart(){
+      const thisProduct = this;
+
+      app.cart.add(thisProduct);
+    }
+
+    prepareCartProduct(){
+      const thisProduct = this;
+
+      const productSummary = {
+        id: thisProduct.id,
+        name: thisProduct.data.name,
+        amount: thisProduct.amountWidget.value,
+        priceSingle: thisProduct.priceSingle,
+        price: thisProduct.price,
+      };
+    }
   }
   
   class AmountWidget{
@@ -323,7 +340,7 @@ const templates = {
       thisCart.products = [];
       
       thisCart.getElements(element);
-      thisCart.initActions();
+      this.initActions();
       console.log('new Cart', thisCart);
     }
     
@@ -333,10 +350,11 @@ const templates = {
       thisCart.dom = {};
       
       thisCart.dom.wrapper = element;
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
 
     initActions(){
-      const thisCart = this;
+      thisCart = this;
 
       thisCart.dom.toggleTrigger.addEventListener('click', function(event){
         event.preventDefault();
@@ -344,21 +362,31 @@ const templates = {
       });
     }
     
-  }
+    add(menuProduct){
+      // const thisCart = this;
+
+      console.log('adding product', menuProduct);
+    }
+    }
+
+
+    }
+
        
   const app = {
 
 
-    initMenu: function () {
+    initMenu: function(){
 
       const thisApp = this;
 
       //console.log('thisApp.data:', thisApp.data);
 
-      for (let productData in thisApp.data.products) {
+      for(let productData in thisApp.data.products){
         new Product(productData, thisApp.data.products[productData]);
       }
     },
+
 
     initCart: function(){
       const thisApp = this;
