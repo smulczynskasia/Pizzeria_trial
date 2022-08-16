@@ -324,7 +324,7 @@ const templates = {
 
       console.log('adding product', menuProduct);
     }
-    }
+    
 
     
   }
