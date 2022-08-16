@@ -79,6 +79,8 @@
     cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
   };
 
+  console.log(settings);
+
   class Product {
     constructor(id, data) {
       const thisProduct = this;
