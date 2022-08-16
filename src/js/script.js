@@ -364,7 +364,7 @@ const templates = {
     }
     
     add(menuProduct){
-      // const thisCart = this;
+      const thisCart = this;
 
       console.log('adding product', menuProduct);
     }
