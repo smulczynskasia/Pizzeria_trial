@@ -77,9 +77,11 @@
   const templates = {
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
     cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
+  
+  console.log(settings);
   };
 
-  console.log(settings);
+  
 
   class Product {
     constructor(id, data) {
