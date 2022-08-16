@@ -4,34 +4,36 @@
   'use strict';
 
   const select = {
-    templateOf: {
-      menuProduct: '#template-menu-product',
+  templateOf: {
+    menuProduct: '#template-menu-product',
+    cartProduct: '#template-cart-product', // CODE ADDED
+  },
+  containerOf: {
+    menu: '#product-list',
+    cart: '#cart',
+  },
+  all: {
+    menuProducts: '#product-list > .product',
+    menuProductsActive: '#product-list > .product.active',
+    formInputs: 'input, select',
+  },
+  menuProduct: {
+    clickable: '.product__header',
+    form: '.product__order',
+    priceElem: '.product__total-price .price',
+    imageWrapper: '.product__images',
+    amountWidget: '.widget-amount',
+    cartButton: '[href="#add-to-cart"]',
+  },
+  widgets: {
+    amount: {
+      input: 'input.amount', // CODE CHANGED
+      linkDecrease: 'a[href="#less"]',
+      linkIncrease: 'a[href="#more"]',
     },
-    containerOf: {
-      menu: '#product-list',
-      cart: '#cart',
-    },
-    all: {
-      menuProducts: '#product-list > .product',
-      menuProductsActive: '#product-list > .product.active',
-      formInputs: 'input, select',
-    },
-    menuProduct: {
-      clickable: '.product__header',
-      form: '.product__order',
-      priceElem: '.product__total-price .price',
-      imageWrapper: '.product__images',
-      amountWidget: '.widget-amount',
-      cartButton: '[href="#add-to-cart"]',
-    },
-    widgets: {
-      amount: {
-        input: 'input[name="amount"]',
-        linkDecrease: 'a[href="#less"]',
-        linkIncrease: 'a[href="#more"]',
-      },
-    },
-    cart: {
+  },
+  // CODE ADDED START
+  cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
     totalNumber: `.cart__total-number`,
@@ -49,39 +51,40 @@
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
   },
-  };
+  // CODE ADDED END
+};
 
-  const classNames = {
-    menuProduct: {
-      wrapperActive: 'active',
-      imageVisible: 'active',
-    },
-     cart: {
+const classNames = {
+  menuProduct: {
+    wrapperActive: 'active',
+    imageVisible: 'active',
+  },
+  // CODE ADDED START
+  cart: {
     wrapperActive: 'active',
   },
-  };
+  // CODE ADDED END
+};
 
-  const settings = {
+const settings = {
   amountWidget: {
     defaultValue: 1,
     defaultMin: 1,
     defaultMax: 9,
-  }, 
+  }, // CODE CHANGED
+  // CODE ADDED START
   cart: {
     defaultDeliveryFee: 20,
   },
+  // CODE ADDED END
 };
-    
-  };
-  console.log(settings);
-  const templates = {
-    menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
-    cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
-  
-  console.log(settings);
-  };
 
-  
+const templates = {
+  menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
+  // CODE ADDED START
+  cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
+  // CODE ADDED END
+};
 
   class Product {
     constructor(id, data) {
@@ -129,6 +132,7 @@
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
 
     initAccordion() {
@@ -312,6 +316,35 @@
     
   }
   
+  class Cart{
+    constructor(element){
+      const thisCart = this;
+      
+      thisCart.products = [];
+      
+      thisCart.getElements(element);
+      thisCart.initActions();
+      console.log('new Cart', thisCart);
+    }
+    
+    getElements(element){
+      const thisCart = this;
+      
+      thisCart.dom = {};
+      
+      thisCart.dom.wrapper = element;
+    }
+
+    initActions(){
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener('click', function(event){
+        event.preventDefault();
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
+    }
+    }
+  }
        
   const app = {
 
@@ -327,6 +360,13 @@
       }
     },
 
+    initCart: function(){
+      const thisApp = this;
+      
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+    },
+    
     initData: function () {
       const thisApp = this;
 
@@ -344,6 +384,7 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
 
 
     },
