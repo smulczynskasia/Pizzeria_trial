@@ -257,7 +257,7 @@ const templates = {
     addToCart(){
       const thisProduct = this;
 
-      app.cart.add(thisProduct);
+      app.cart.add(thisProduct.prepareCartProduct());
     }
 
     prepareCartProduct(){
@@ -269,7 +269,54 @@ const templates = {
         amount: thisProduct.amountWidget.value,
         priceSingle: thisProduct.priceSingle,
         price: thisProduct.price,
+        params: thisProduct.prepareCartProductParams,
       };
+      return productSummary;
+    }
+
+    prepareCartProductParams(){
+      const thisProduct = this;
+
+      /* covert form to object structure e.g. { sauce: ['tomato'], toppings: ['olives', 'redPeppers']} */
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      //console.log('formData:', formData);
+
+
+      /* for every category (param)... */
+      for (let paramId in thisProduct.data.params) {
+
+        /* determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }*/
+        const param = thisProduct.data.params[paramId];
+        //console.log(paramId, param);
+
+        const params = {};
+
+        /* for every option in this category */
+        for (let optionId in param.options) {
+
+          /* determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }*/
+          const option = param.options[optionId];
+          //console.log(optionId, option, formData[paramId].includes(optionId), option);
+             
+          params[paramId] = {
+            label: param.label,
+            options: {}
+          }
+
+          for(let optionId in param.options){
+            const option = param.options[optionId];
+            const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
+          }
+          
+          if(optionSelected){
+            params[paramId].options[optionId] = option.label; 
+          }
+            
+        }
+      }
+
+      return params();
+    }
     }
   }
   
