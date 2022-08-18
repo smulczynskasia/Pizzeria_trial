@@ -261,20 +261,11 @@
 
       app.cart.add(thisProduct.prepareCartProduct());
 
-      const generatedHTML = templates.menuProduct(thisProduct.data);
+      const generatedHTML = templates.cartProduct(thisProduct.prepareCartProduct());
 
-      /* create element using utils.createElementFromHTML */
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);x
 
-      thisProduct.element = utils.createDOMFromHTML(generatedHTML);
-
-      /* find menu container */
-
-      const menuContainer = document.querySelector(select.containerOf.menu);
-
-      /* add element to menu */
-
-      menuContainer.appendChild(thisProduct.element);
-
+      thisCart.dom.productList.appendChild(generatedDOM);
 
     }
 
