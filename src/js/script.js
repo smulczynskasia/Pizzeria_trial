@@ -257,13 +257,13 @@
     }
 
     addToCart() {
-      const thisProduct = this;
+      const thisCart = this;
 
       app.cart.add(thisProduct.prepareCartProduct());
 
       const generatedHTML = templates.cartProduct(thisProduct.prepareCartProduct());
 
-      const generatedDOM = utils.createDOMFromHTML(generatedHTML);x
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
       thisCart.dom.productList.appendChild(generatedDOM);
 
