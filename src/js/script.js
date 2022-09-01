@@ -257,7 +257,7 @@
     }
 
     addToCart() {
-      const thisCart = this;
+      const thisProduct = this;
 
       app.cart.add(thisProduct.prepareCartProduct());
 
@@ -419,14 +419,17 @@
         thisCart.update();
       });
       thisCart.dom.productList.addEventListener('remove', function (event) {
-        thisCartProduct.remove(event.detail.cartProduct);
+        thisCart.remove(event.detail.cartProduct);
       });
     }
 
     add(menuProduct) {
-      //const thisCart = this;
+      const thisCart = this;
 
-      //console.log('adding product', menuProduct);
+      const generatedHTML = templates.cartProduct(menuProduct);
+
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
       //console.log('thisCart.products', thisCart.products);
@@ -438,6 +441,8 @@
       const thisCart = this;
 
       const deliveryFee = settings.cart.defaultDeliveryFee;
+
+      console.log(deliveryFee);
 
       thisCart.totalNumber = 0;
       thisCart.subtotalPrice = 0;
