@@ -265,7 +265,7 @@
 
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
-      thisCart.dom.productList.appendChild(generatedDOM);
+      thisProduct.dom.productList.appendChild(generatedDOM);
 
     }
 
@@ -444,10 +444,12 @@
 
       console.log(deliveryFee);
 
+
       thisCart.totalNumber = 0;
       thisCart.subtotalPrice = 0;
 
       for (let cartProduct of thisCart.products) {
+        console.log(cartProduct);
         thisCart.totalNumber += thisCartProduct.amount;
         thisCart.subtotalPrice += thisCartProduct.price;
       };
@@ -525,13 +527,16 @@
         detail: {
           cartProduct: thisCartProduct,
         }
+
       });
+      console.log(event);
+
     }
 
     initActions() {
       thisCartProduct.dom.edit.addEventListener('click', function (event) {
         event.preventDefault();
-      });
+      })
       thisCartProduct.dom.remove.addEventListener('click', function (event) {
         event.preventDefault();
         thisCartProduct.remove();
