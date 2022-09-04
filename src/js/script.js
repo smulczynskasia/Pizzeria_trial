@@ -333,7 +333,7 @@
       thisWidget.initActions();
     }
 
-    getElements(element) {
+    getElements(element){
       const thisWidget = this;
 
       thisWidget.element = element;
